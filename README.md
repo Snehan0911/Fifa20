@@ -5,9 +5,6 @@ This repository contains a comprehensive data analysis and machine learning clus
 All tasks have been consolidated into a single executable Python script [fifa20_analysis.py](file:///d:/Projects/Fifa20/fifa20_analysis.py), and are also detailed inside the Jupyter Notebook [PRCP-Fifa20.ipynb](file:///d:/Projects/Fifa20/PRCP-Fifa20.ipynb).
 
 ---
-## 📊 Task 1: Prepare a complete data analysis report on the given data. 
-## 📊 Task 2: Explore football skills and cluster football players based on their attributes.
-## 📊 Task 3: Key Insights & Questions Answered.
 
 ## Dataset Link:
 
@@ -67,10 +64,54 @@ All tasks have been consolidated into a single executable Python script [fifa20_
 - Interceptions: Player’s ability to intercept the ball while opposite team’s players are passing rated between 1-99. It is a defensive skill.
 - StandingTackle: Player’s ability to perform tackle (take the ball from the opposite player) while standing rated between 1-99. It is a defensive skill.
 - SlidingTackle: Player’s ability to perform tackle by sliding rated between 1-99. It is a defensive skill.
-- Marking: Player’s ability to apply strategies to prevent opposing team from taking the ball rated between 1-99. It is a defensive skill.  
+- Marking: Player’s ability to apply strategies to prevent opposing team from taking the ball rated between 1-99. It is a defensive skill.
 
-## 📊 Task 3: Key Insights & Questions Answered.
-### 1. Top Player-Producing Countries
+----
+
+## 📊 Task 1: Data Analysis
+- Perform data cleaning and preprocessing.
+- Handle missing values and duplicate records.
+- Conduct Exploratory Data Analysis (EDA).
+- Generate statistical summaries and visualizations.
+  
+## 📊 Task 2: Player Clustering
+- Select relevant player skill attributes.
+- Apply feature scaling techniques.
+- Implement clustering algorithms such as K-Means and Hierarchical Clustering.
+- Evaluate cluster quality using metrics like Silhouette Score and Elbow Method.
+- Group players based on their playing style and skill characteristics.
+
+To group players based on their style of play rather than just their overall rating or reputation, we conducted clustering on **34 detailed skill features** (e.g., crossing, finishing, dribbling, ball control, strength, tackling, and goalkeeping skills) using **K-Means Clustering**.
+
+### 1. Determining Optimal K
+Using the Elbow Method and Silhouette Analysis:
+* **K=2** gives the highest Silhouette score (~0.55) because it separates Goalkeepers from Outfield players.
+* **K=4** was chosen as the optimal tactical clustering. It has a high cohesion/separation and maps perfectly to the four fundamental football positions:
+
+### 2. Cluster Profiles (Tactical Playing Styles)
+* **Cluster 0: Midfielders & Playmakers (Box-to-Box)**
+  * *Characteristics*: Extremely well-rounded. High stamina (74.0), short passing (70.7), and ball control (70.9). They contribute both offensively (finishing: 57.2) and defensively (tackling: 60.8).
+  * *Primary Positions*: `CM`, `CDM`, `CAM`, `LM`, `RM`.
+* **Cluster 1: Goalkeepers**
+  * *Characteristics*: High goalkeeping diving (65.4), handling (63.1), kicking (61.8), positioning (63.4), and reflexes (66.4). Very low outfield values.
+  * *Primary Positions*: `GK`.
+* **Cluster 2: Defensive Specialists**
+  * *Characteristics*: High physical strength (69.9), jumping (67.7), aggression (63.5), and standing tackles (64.0). Very low offensive stats (finishing: 31.7).
+  * *Primary Positions*: `CB`, `RB`, `LB`.
+* **Cluster 3: Attackers & Wingers**
+  * *Characteristics*: High acceleration (71.9), sprint speed (71.7), agility (70.4), and finishing (59.8). Low defensive work and tackles (30.3).
+  * *Primary Positions*: `ST`, `LM`, `RM`, `CAM`, `RW`, `LW`.
+
+### 3. Dimensionality Reduction & Visualization
+Using **PCA (Principal Component Analysis)**, the 34 dimensions were reduced to 2 components. The resulting scatter plot shows clear, distinct boundaries between the 4 playing styles, confirming that K-Means effectively grouped the players.
+  
+## 📊 Task 3:Business Questions
+- Identify the top 10 countries producing the highest number of professional football players.
+- Analyze the relationship between player age and overall rating.
+- Determine the age at which players typically stop improving.
+- Compare salaries/wages among offensive positions such as Strikers (ST), Right Wingers (RW), and Left Wingers (LW).
+
+#### 1. Top Player-Producing Countries
 A rank-ordered list of the top 10 countries producing the most players at the top level:
 1. **England** - 1,667 players
 2. **Germany** - 1,216 players
@@ -101,33 +142,14 @@ Comparing the average wages (EUR) of offensive player positions:
 
 ---
 
-## 🤖 Task 2: Player Clustering (Machine Learning)
-
-To group players based on their style of play rather than just their overall rating or reputation, we conducted clustering on **34 detailed skill features** (e.g., crossing, finishing, dribbling, ball control, strength, tackling, and goalkeeping skills) using **K-Means Clustering**.
-
-### 1. Determining Optimal K
-Using the Elbow Method and Silhouette Analysis:
-* **K=2** gives the highest Silhouette score (~0.55) because it separates Goalkeepers from Outfield players.
-* **K=4** was chosen as the optimal tactical clustering. It has a high cohesion/separation and maps perfectly to the four fundamental football positions:
-
-### 2. Cluster Profiles (Tactical Playing Styles)
-* **Cluster 0: Midfielders & Playmakers (Box-to-Box)**
-  * *Characteristics*: Extremely well-rounded. High stamina (74.0), short passing (70.7), and ball control (70.9). They contribute both offensively (finishing: 57.2) and defensively (tackling: 60.8).
-  * *Primary Positions*: `CM`, `CDM`, `CAM`, `LM`, `RM`.
-* **Cluster 1: Goalkeepers**
-  * *Characteristics*: High goalkeeping diving (65.4), handling (63.1), kicking (61.8), positioning (63.4), and reflexes (66.4). Very low outfield values.
-  * *Primary Positions*: `GK`.
-* **Cluster 2: Defensive Specialists**
-  * *Characteristics*: High physical strength (69.9), jumping (67.7), aggression (63.5), and standing tackles (64.0). Very low offensive stats (finishing: 31.7).
-  * *Primary Positions*: `CB`, `RB`, `LB`.
-* **Cluster 3: Attackers & Wingers**
-  * *Characteristics*: High acceleration (71.9), sprint speed (71.7), agility (70.4), and finishing (59.8). Low defensive work and tackles (30.3).
-  * *Primary Positions*: `ST`, `LM`, `RM`, `CAM`, `RW`, `LW`.
-
-### 3. Dimensionality Reduction & Visualization
-Using **PCA (Principal Component Analysis)**, the 34 dimensions were reduced to 2 components. The resulting scatter plot shows clear, distinct boundaries between the 4 playing styles, confirming that K-Means effectively grouped the players.
-
----
+## Technologies Used
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-Learn
+- Jupyter Notebook
 
 ## ⚙️ How to Setup & Run the Project
 
@@ -163,3 +185,6 @@ You can also run the Jupyter notebook `PRCP-Fifa20.ipynb` using JupyterLab or Ju
 jupyter notebook PRCP-Fifa20.ipynb
 ```
 All code cells, EDA plots, Sweetviz reports, Elbow/Silhouette curves, and PCA cluster scatter plots are pre-computed and saved inside the notebook.
+
+# Author:
+- Sneha Nuchha
