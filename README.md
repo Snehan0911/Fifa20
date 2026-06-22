@@ -200,7 +200,7 @@ jupyter notebook PRCP-Fifa20.ipynb
 ```
 All code cells, EDA plots, Sweetviz reports, Elbow/Silhouette curves, and PCA cluster scatter plots are pre-computed and saved inside the notebook.
 
-##💡 Challenges Faced
+## 💡 Challenges Faced
 
 -🔹 Handling Missing Values
 
