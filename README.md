@@ -212,7 +212,6 @@ All code cells, EDA plots, Sweetviz reports, Elbow/Silhouette curves, and PCA cl
 
 -🔹 Outlier Detection and Treatment
 
-# Author:
-- Sneha Nuchha
+# Author: Sneha Nuchha
 
 # ⭐ If you found this project useful, don't forget to Star the Repository!
