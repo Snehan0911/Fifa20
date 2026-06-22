@@ -1,12 +1,13 @@
-# FIFA 20 Players Data Analysis & Clustering
+# ⚽ FIFA 20 Players Data Analysis & Clustering Project
 
+📌 Project Overview
 This repository contains a comprehensive data analysis and machine learning clustering project on the FIFA 20 players dataset (`players_20.csv`). The goal is to analyze player attributes, discover trends, answer tactical/business questions, and group players into distinct playing styles (archetypes) using clustering.
 
 All tasks have been consolidated into a single executable Python script [fifa20_analysis.py](file:///d:/Projects/Fifa20/fifa20_analysis.py), and are also detailed inside the Jupyter Notebook [PRCP-Fifa20.ipynb](file:///d:/Projects/Fifa20/PRCP-Fifa20.ipynb).
 
 ---
 
-## Dataset Link:
+# 📂 Dataset Information
 
 ### FIFA 20 Football is arguably the most popular sport in the world and FIFA is the most popular football (soccer) simulation game by Electronic Arts (EA Sports).
 ### The dataset provided includes the players data for the Career Mode from FIFA 15 to FIFA 20 ("players_20.csv"). The data allows multiple comparisons of the same players across the last 6 versions of the videogame.
@@ -14,7 +15,7 @@ All tasks have been consolidated into a single executable Python script [fifa20_
 - Historical comparison between Messi and Ronaldo (what skill attributes changed the most during time - compared to real-life stats);
 - Ideal budget to create a competitive team (at the level of top n teams in Europe) and at which point the budget does not allow to buy significantly better players for the 11-men lineup. An extra is the same comparison with the Potential attribute for the lineup instead of the Overall attribute;
 - Sample analysis of top n% players (e.g. top 5% of the player) to see if some important attributes such as Agility or BallControl or Strength have been popular or not across the FIFA versions. An example would be seeing that the top 5% players of FIFA 20 are faster (higher Acceleration and Agility) compared to FIFA 15. The trend of attributes is also an important indication of how some attributes are necessary for players to win games (a version with more top 5% players with high BallControl stats would indicate that the game is more focused on the technique rather than the physical aspect).
-### Domain: Sports
+### 🌍Domain: Sports
 ### Link : https://d3ilbtxij3aepc.cloudfront.net/projects/CDS-Capstone-Projects/PRCP-1004-Fifa20.zip
 
 
@@ -68,13 +69,15 @@ All tasks have been consolidated into a single executable Python script [fifa20_
 
 ----
 
+## 🎯 Project Objectives
+
 ## 📊 Task 1: Data Analysis
 - Perform data cleaning and preprocessing.
 - Handle missing values and duplicate records.
 - Conduct Exploratory Data Analysis (EDA).
 - Generate statistical summaries and visualizations.
   
-## 📊 Task 2: Player Clustering
+## 🤖 Task 2: Player Clustering
 - Select relevant player skill attributes.
 - Apply feature scaling techniques.
 - Implement clustering algorithms such as K-Means and Hierarchical Clustering.
@@ -105,7 +108,7 @@ Using the Elbow Method and Silhouette Analysis:
 ### 3. Dimensionality Reduction & Visualization
 Using **PCA (Principal Component Analysis)**, the 34 dimensions were reduced to 2 components. The resulting scatter plot shows clear, distinct boundaries between the 4 playing styles, confirming that K-Means effectively grouped the players.
   
-## 📊 Task 3:Business Questions
+## ⚽ Task 3:Business Questions
 - Identify the top 10 countries producing the highest number of professional football players.
 - Analyze the relationship between player age and overall rating.
 - Determine the age at which players typically stop improving.
@@ -142,17 +145,28 @@ Comparing the average wages (EUR) of offensive player positions:
 
 ---
 
-## Technologies Used
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-Learn
-- Jupyter Notebook
+## 🛠️ Technologies Used
+
+- 🐍 Python
+- 📊 Pandas
+- 🔢 NumPy
+- 📈 Matplotlib
+- 🎨 Seaborn
+- 🤖 Scikit-Learn
+- 📓 Jupyter Notebook
+- 💻 VS Code
+- 🔗 Git & GitHub
+
+## 📈 Key Insights Generated
+
+- 🌎 Country-wise Football Talent Distribution
+- 📊 Age vs Overall Rating Analysis
+- 💰 Position-wise Salary Comparison
+- ⚽ Player Skill Analysis
+- 🎯 Identification of Similar Player Groups
+- 📉 Correlation Analysis of Football Attributes
 
 ## ⚙️ How to Setup & Run the Project
-
 ### Prerequisites
 * Anaconda or Python 3.10+
 * Install dependencies listed in `requirements.txt`:
@@ -186,5 +200,19 @@ jupyter notebook PRCP-Fifa20.ipynb
 ```
 All code cells, EDA plots, Sweetviz reports, Elbow/Silhouette curves, and PCA cluster scatter plots are pre-computed and saved inside the notebook.
 
+##💡 Challenges Faced
+
+-🔹 Handling Missing Values
+
+-🔹 High-Dimensional Data
+
+-🔹 Feature Selection
+
+-🔹 Determining Optimal Number of Clusters
+
+-🔹 Outlier Detection and Treatment
+
 # Author:
 - Sneha Nuchha
+
+# ⭐ If you found this project useful, don't forget to Star the Repository!
